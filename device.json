@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Framework Device",
+  "description": "A configuration of the framework laptop",
+  "type": "object",
+  "properties": {
+    "form": {
+      "description": "The form factor of the device",
+      "type": "string",
+      "enum": ["laptop"]
+    },
+    "memory": {
+      "description": "RAM configuration of the device",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "description": "Model of the RAM",
+            "type": "string"
+          },
+          "capacity": {
+            "description": "Capacity of the RAM in gigabytes",
+            "type": "number"
+          }
+        },
+        "required": ["model", "capacity"]
+      }
+    },
+    "board": {
+      "description": "The motherboard configuration",
+      "type": "object",
+      "properties": {
+        "base": {
+          "type": "string",
+          "enum": ["Intel 11"]
+        },
+        "processor": {
+          "type": "string"
+        }
+      },
+      "required": ["base", "processor"]
+    }
+  },
+  "required": [ "form", "board" ]
+}
