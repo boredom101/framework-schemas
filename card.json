@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Expansion Card",
+  "description": "An expansion card for the framework laptop",
+  "type": "object",
+  "properties": {
+    "function": {
+      "description": "The function of the expansion card",
+      "type": "string"
+    },
+    "images": {
+      "description": "URLs of images of the expansion card",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true
+    },
+    "dimensions": {
+      "description": "Dimensions in millimeters if it is oversized",
+      "type": "object",
+      "properties": {
+        "length": {
+          "type": "number"
+        },
+        "width": {
+          "type": "number"
+        },
+        "height": {
+          "type": "number"
+        }
+      },
+      "required": [ "length", "width", "height" ]
+    },
+    "source": {
+      "description": "Link to the repository containing the schematics if it is open source",
+      "type": "string",
+      "format": "uri"
+
+    }
+  },
+  "required": [ "function" ]
+}
