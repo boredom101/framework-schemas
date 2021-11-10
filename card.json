@@ -38,6 +38,17 @@
       "type": "string",
       "format": "uri"
 
+    },
+    "variation": {
+      "description": "The attribute that can be modified, like color"
+    },
+    "variants": {
+      "description": "List of variants this expansion card has",
+      "type": "array",
+      "items": {
+        "type": ["number", "string"]
+      },
+      "uniqueItems": true
     }
   },
   "required": [ "function" ]
