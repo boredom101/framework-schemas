@@ -1,7 +1,27 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "component": {
+      "type": "object",
+      "properties": {
+        "brand": {
+          "description": "Brand of this component",
+          "type": "string"
+        },
+        "model": {
+          "description": "Model number of the component",
+          "type": "string"
+        },
+        "value": {
+          "description": "Main spec of the component (like gigabytes of memeory for a RAM stick)",
+          "type": "number"
+        }
+      },
+      "required": ["brand", "model", "value"]
+    }
+  },
   "title": "Framework Device",
-  "description": "A configuration of the framework laptop",
+  "description": "A configuration of the framework device",
   "type": "object",
   "properties": {
     "form": {
@@ -9,23 +29,30 @@
       "type": "string",
       "enum": ["laptop"]
     },
+    "cards": {
+      "description": "List of expansions cards plugged into this device",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "memory": {
       "description": "RAM configuration of the device",
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "model": {
-            "description": "Model of the RAM",
-            "type": "string"
-          },
-          "capacity": {
-            "description": "Capacity of the RAM in gigabytes",
-            "type": "number"
-          }
-        },
-        "required": ["model", "capacity"]
+        "$ref": "#/$defs/component"
       }
+    },
+    "storage": {
+      "description": "Array of storage devices aside for expansion cards",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/component"
+      }
+    },
+    "wireless": {
+      "description": "MOdel number of the built-in wireless card",
+      "type": "string"
     },
     "board": {
       "description": "The motherboard configuration",
