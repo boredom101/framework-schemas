@@ -13,7 +13,7 @@
           "type": "string"
         },
         "value": {
-          "description": "Main spec of the component (like gigabytes of memeory for a RAM stick)",
+          "description": "Main spec of the component (like gigabytes of memory for a RAM stick)",
           "type": "number"
         }
       },
@@ -40,7 +40,8 @@
       "description": "RAM configuration of the device",
       "type": "array",
       "items": {
-        "$ref": "#/$defs/component"
+        "description": "Amount of RAM in gigabytes",
+        "type": "number"
       }
     },
     "storage": {

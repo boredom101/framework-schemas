@@ -1,0 +1,19 @@
+{
+    "$schema": "./device.json",
+    "board": {
+        "base": "Intel 11",
+        "processor": "i5-1135G7"
+    },
+    "form": "laptop",
+    "wireless": "AX210 No vPro",
+    "memory": [
+        8, 8
+    ],
+    "storage": [
+        {
+            "brand": "WD Black",
+            "model": "SN850",
+            "value": 500
+        }
+    ]
+}
