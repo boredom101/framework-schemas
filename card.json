@@ -4,6 +4,10 @@
   "description": "An expansion card for the framework laptop",
   "type": "object",
   "properties": {
+    "name": {
+      "description": "Name of this expansion card",
+      "type": "string"
+    },
     "function": {
       "description": "The function of the expansion card",
       "type": "string"
@@ -51,5 +55,5 @@
       "uniqueItems": true
     }
   },
-  "required": [ "function" ]
+  "required": [ "name", "function" ]
 }
