@@ -51,7 +51,7 @@
       }
     },
     "wireless": {
-      "description": "MOdel number of the built-in wireless card",
+      "description": "Model number of the built-in wireless card",
       "type": "string"
     },
     "board": {
